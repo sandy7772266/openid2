@@ -48,7 +48,9 @@ class AuthController extends BaseController {
 				    // return dd($attr);
 				    // 將取得之資料帶到下一個步驟進行處理
 				    // 要有相對應的路由設定
-				    return Redirect::action('AuthController@showUserData', ['user' => $attr]);
+				    Session::put('data_s', $attr);
+
+				    return Redirect::action('AuthController_s@showUserData_s', ['user' => $attr]);
 				}
 
 			}
@@ -78,8 +80,7 @@ class AuthController extends BaseController {
 	 * 
 	 */
 	public function mydd($data){
-		Session::put('data_s', $data);
-
+		
 		Redirect::action('AuthController_s@showUserData_s', ['user' => $data]);
 		//echo "<pre>";
 		//var_dump($data);

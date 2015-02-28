@@ -18,5 +18,5 @@ Route::get('/', function()
 });
 
 Route::get('login/openid', 'AuthController@openIDLogin');
-Route::get('user/data/show', 'AuthController@showUserData');
+//Route::get('user/data/show', 'AuthController@showUserData');
 Route::get('user/data/show', 'AuthController_s@showUserData_s');
